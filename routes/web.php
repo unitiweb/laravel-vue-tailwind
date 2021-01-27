@@ -13,6 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+
+Route::get('/{any}', function () {
+    // This will hold javascript variables for use in the vue app
+    $env = [];
+    return view('home', ['env' => $env]);
+})->where('any', '.*');
