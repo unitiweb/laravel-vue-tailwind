@@ -8,4 +8,4 @@ const Plugins = {
     }
 }
 
-export default Filters
+export default Plugins
