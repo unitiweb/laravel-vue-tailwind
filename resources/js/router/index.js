@@ -14,13 +14,19 @@ import store from '@/store'
 /**
  * Load the layout components
  */
-import BaseLayout from '@/components/layouts/BaseLayout';
-import AuthLayout from "@/components/layouts/AuthLayout";
+import BaseLayout from '@/components/layouts/BaseLayout'
+import AuthLayout from '@/components/layouts/AuthLayout'
+import DashboardLayout from '@/components/layouts/DashboardLayout'
 
 /**
  * Auth Components
  */
 import Login from '@/views/auth/Login'
+
+/**
+ * Dashboard Components
+ */
+import DashboardHome from '@/views/dashboard/DashboardHome'
 
 /**
  * Add the plugins to the Vue instance
@@ -44,11 +50,24 @@ const routes = [
                 path: '/auth',
                 name: 'auth',
                 component: AuthLayout,
+                redirect: { name: 'login' },
                 children: [
                     {
                         path: 'login',
                         name: 'login',
                         component: Login
+                    }
+                ]
+            }, {
+                path: '/dashboard',
+                name: 'dashboard',
+                component: DashboardLayout,
+                redirect: { name: 'dashboard-home' },
+                children: [
+                    {
+                        path: '',
+                        name: 'dashboard-home',
+                        component: DashboardHome
                     }
                 ]
             }
