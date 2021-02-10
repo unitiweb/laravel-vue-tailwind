@@ -1,5 +1,5 @@
 <template>
-    <dashboard-page-header title="Dashboard">
+    <dashboard-page-header title="Profile">
         Body Here
     </dashboard-page-header>
 </template>

@@ -19,14 +19,19 @@ import AuthLayout from '@/components/layouts/AuthLayout'
 import DashboardLayout from '@/components/layouts/DashboardLayout'
 
 /**
- * Auth Components
+ * Auth related components
  */
 import Login from '@/views/auth/Login'
 
 /**
- * Dashboard Components
+ * Dashboard components
  */
 import DashboardHome from '@/views/dashboard/DashboardHome'
+
+/**
+ * Profile components
+ */
+import ProfileHome from '@/views/profile/ProfileHome'
 
 /**
  * Add the plugins to the Vue instance
@@ -68,6 +73,18 @@ const routes = [
                         path: '',
                         name: 'dashboard-home',
                         component: DashboardHome
+                    }
+                ]
+            }, {
+                path: '/profile',
+                name: 'profile',
+                component: DashboardLayout,
+                redirect: { name: 'profile-home' },
+                children: [
+                    {
+                        path: '',
+                        name: 'profile-home',
+                        component: ProfileHome
                     }
                 ]
             }
